@@ -16,6 +16,7 @@ namespace Task4
 
             DateFrame[] dateFrames;
             int numberOfFrames;
+
             // создаем поток для чтения
             using (StreamReader streamReader = new StreamReader(filePath))
             {
@@ -30,7 +31,6 @@ namespace Task4
 
                 // ставим указатель в начало
                 streamReader.BaseStream.Seek(0, SeekOrigin.Begin);
-
 
                 for (int i = 0; i < numberOfFrames; i++)
                 {

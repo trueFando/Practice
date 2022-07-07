@@ -5,3 +5,10 @@ C:\Users\user\Desktop\практика\Practice\Task4\obj\Debug\Task4.csproj.Cor
 C:\Users\user\Desktop\практика\Practice\Task4\obj\Debug\Task4.exe
 C:\Users\user\Desktop\практика\Practice\Task4\obj\Debug\Task4.pdb
 C:\Users\user\Desktop\практика\Practice\Task4\obj\Debug\Task4.csprojAssemblyReference.cache
+C:\Users\root\Desktop\практика\Practice\Task4\bin\Debug\Task4.exe.config
+C:\Users\root\Desktop\практика\Practice\Task4\bin\Debug\Task4.exe
+C:\Users\root\Desktop\практика\Practice\Task4\bin\Debug\Task4.pdb
+C:\Users\root\Desktop\практика\Practice\Task4\obj\Debug\Task4.csprojAssemblyReference.cache
+C:\Users\root\Desktop\практика\Practice\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\практика\Practice\Task4\obj\Debug\Task4.exe
+C:\Users\root\Desktop\практика\Practice\Task4\obj\Debug\Task4.pdb
