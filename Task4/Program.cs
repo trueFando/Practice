@@ -49,6 +49,13 @@ namespace Task4
                     dateFrames[i].SetDateAndFrame(date, frame);
                 }
             }
+
+            // тест
+            Console.WriteLine($"Кадр 0, дней с 1900: {dateFrames[0].DaysFrom1900}, " +
+                $"в двоичном виде: {Convert.ToString(dateFrames[0].DaysFrom1900, 2)}");
+            Console.WriteLine($"Кадр 0, мс с начала суток: {dateFrames[0].Milliseconds}, " +
+                $"в двоичном виде: {Convert.ToString(dateFrames[0].Milliseconds, 2)}");
+            Console.WriteLine($"Кадр 0, ТМ кадр: {dateFrames[0].Frame}");
         }
 
         // ищем количество переносов строки в input - столько у нас фреймов
