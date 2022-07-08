@@ -36,6 +36,7 @@ namespace Task4
             {
                 string time = DateAndTme.Substring(DateAndTme.IndexOf('T') + 1,
                     DateAndTme.Length - DateAndTme.Substring(0, DateAndTme.IndexOf('T')).Length - 1);
+
                 DateTime dt = DateTime.Parse(time).AddHours(-3);
                 return (int) dt.TimeOfDay.TotalMilliseconds;
             }
