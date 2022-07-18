@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 
 namespace Task4
@@ -48,14 +45,19 @@ namespace Task4
                     // записываем элемент в массив
                     dateFrames[i].SetDateAndFrame(date, frame);
                 }
+
             }
 
-            // тест
-            Console.WriteLine($"Кадр 0, дней с 1900: {dateFrames[0].DaysFrom1900}, " +
-                $"в двоичном виде: {Convert.ToString(dateFrames[0].DaysFrom1900, 2)}");
-            Console.WriteLine($"Кадр 0, мс с начала суток: {dateFrames[0].Milliseconds}, " +
-                $"в двоичном виде: {Convert.ToString(dateFrames[0].Milliseconds, 2)}");
-            Console.WriteLine($"Кадр 0, ТМ кадр: {dateFrames[0].Frame}");
+            string filePathOut = ConfigurationManager.AppSettings.Get("outputFilePath");
+            using (BinaryWriter br = new BinaryWriter(File.Open(filePathOut, FileMode.OpenOrCreate)))
+            {
+                foreach (DateFrame df in dateFrames)
+                {
+                    br.Write(df.DaysFrom1900);
+                    br.Write(df.Milliseconds);
+                    br.Write(df.Frame);
+                }
+            }
         }
 
         // ищем количество переносов строки в input - столько у нас фреймов
