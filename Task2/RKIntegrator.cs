@@ -8,7 +8,6 @@ namespace Task2
 {
     static class RKIntegrator
     {
-
         // тензор инерции КА
         readonly static double[] J = new double[9] {1000, 0, 0, 
                                                                 0, 1200, 0,  

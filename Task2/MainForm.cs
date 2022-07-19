@@ -17,9 +17,11 @@ namespace Task2
         {
             InitializeComponent();
         }
-        // коэффициенты закона управления
-        private double kF = 0.3, kW = 12, Eps = 0.1;
 
+        // коэффициенты закона управления
+        private double kF = 1, kW = 12, Eps = 1;
+
+        // управл. моменты, действующие на систему
         private void GetM(double[] At, double[] result)
         {
             result[0] = -kF * Math.Atan2(-At[5], At[4]) - kW * At[9];
@@ -39,7 +41,7 @@ namespace Task2
         {
             double endTime = 10000;
             double h = 0.01;
-            double[] At = {0.99900827050126, -0.0397815132178866, -0.0199976667683312, 
+            double[] a0 = {0.99900827050126, -0.0397815132178866, -0.0199976667683312, 
                                 0.039987334736587, 0.999150147071977, 0.00999983333416666, 
                                 0.0195828631907146, -0.0107895695994827, 0.999750017082826,
                                 0, 0, 0};
@@ -47,24 +49,26 @@ namespace Task2
             double time = 0;
 
             string filePath = "C://Texts/task2.txt";
+
+            // запись в файл
             using (StreamWriter sr = new StreamWriter(filePath))
             {
                 for (int i = 0; time < endTime; i++)
                 {
-                    double[] newAt = new double[12];
-                    RKIntegrator.RK(time, At, newAt, h);
+                    double[] newA = new double[12];
+                    RKIntegrator.RK(time, a0, newA, h);
 
-                    for (int j = 0; j < 12; j++) At[j] = newAt[j];
+                    for (int j = 0; j < 12; j++) 
+                        a0[j] = newA[j];
 
                     if (i % 100 == 0)
                     {
                         double[] controlM = new double[3];
-                        GetM(At, controlM);
+                        GetM(a0, controlM);
                         sr.WriteLine($"{controlM[0]} {controlM[1]} {controlM[2]}");
                     }
                     time += h;
                 }
-                
             }
         }
 
